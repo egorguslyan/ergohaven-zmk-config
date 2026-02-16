@@ -116,6 +116,15 @@
         };
     };
 
+    macros {
+        swlang: swlang {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &tog 3>;
+            label = "SWLANG";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -146,7 +155,7 @@
 &trans  &kp F1     &kp F2    &kp F3    &kp F4   &kp F5                    &kp F6  &kp F7     &kp F8    &kp F9     &kp F10   &trans
 &trans  &kp GRAVE  &kp BSLH  &kp LBKT  &kp SQT  &trans                    &trans  &kp MINUS  &kp RBKT  &kp EQUAL  &kp FSLH  &trans
 &trans  &nr1       &nr2      &nr3      &nr4     &nr5    &trans    &trans  &nr6    &nr7       &nr8      &nr9       &nr0      &trans
-                   &trans    &trans    &trans   &trans  &trans    &trans  &trans  &tog 3     &trans    &trans
+                   &trans    &trans    &trans   &trans  &trans    &trans  &trans  &swlang    &trans    &trans
             >;
 
             display-name = "Symbols";
@@ -158,7 +167,7 @@
 &trans  &msc SCRL_UP    &msc SCRL_DOWN  &mkp LCLK        &mkp RCLK             &mkp MCLK                                            &trans        &kp F11       &kp F12       &kp RALT      &kp PRINTSCREEN  &trans
 &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT       &trans                                               &trans        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT        &trans
 &trans  &kp C_VOL_DN    &kp C_VOL_UP    &kp K_MUTE       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &bootloader    &studio_unlock  &trans        &kp HOME      &kp PG_DN     &kp PG_UP     &kp END          &trans
-                        &trans          &trans           &tog 3                &trans                &trans         &trans          &trans        &trans        &trans        &trans
+                        &trans          &trans           &swlang               &trans                &trans         &trans          &trans        &trans        &trans        &trans
             >;
 
             display-name = "Nav";
